@@ -85,8 +85,10 @@ def main() -> None:
         totals = log_sighting(connection, "Leopard", "North", 1)
         log_sighting(connection, "Chital", "North", 24, totals)
         log_sighting(connection, "Hornbill", "East", 3, totals)
+
         if len(totals) != 3:
-            Sraise RuntimeError("Expected totals for three species.")
+            raise RuntimeError("Expected totals for three species.")
+
         print(
             observer_id("Arun"),
             zone_summary(connection, "North"),
